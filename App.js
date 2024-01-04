@@ -46,7 +46,7 @@ function App() {
                 console.log(err);
             }
         };
-        //removeData();
+        // removeData();
         firstLoad();
     }, [])
 

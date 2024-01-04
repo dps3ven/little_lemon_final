@@ -2,20 +2,15 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { ScrollView, Text, StyleSheet, TextInput, Image, Button, View, Pressable, Alert, Checkbox } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
-import Home from './Home';
 import { useNavigation } from "@react-navigation/native";
 
 export default function Onboarding() {
 
   const navigation = useNavigation();
-  const Stack = createNativeStackNavigator();
-  const [email, onChangeEmail] = React.useState('');
-  const [firstname, onChangefirstname] = React.useState('');
-  const [lastname, onChangelastname] = React.useState('');
-  const [isDisabled, onChangeDisabled] = React.useState(true)
-
+  const [email, onChangeEmail] = useState('');
+  const [firstname, onChangefirstname] = useState('');
+  const [lastname, onChangelastname] = useState('');
+  const [isDisabled, onChangeDisabled] = useState(true)
 
   const onHomeButtonPressed = () => {
     navigation.navigate("Home");
@@ -82,8 +77,6 @@ export default function Onboarding() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //margin: 20,
-    //width: 300,
     backgroundColor: 'grey',
   },
   image: {
@@ -92,7 +85,6 @@ const styles = StyleSheet.create({
     marginLeft: 40,
   },
   input: {
-    //     height: 40, 
     margin: 12,
     borderWidth: 1,
     padding: 10,
@@ -103,7 +95,6 @@ const styles = StyleSheet.create({
   infoSection: {
     fontSize: 24,
     padding: 10,
-    //marginVertical: 8,
     color: '#EDEFEE',
     textAlign: 'center',
   },

@@ -1,16 +1,12 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import CheckBox from 'expo-checkbox'
 import LittleLemonHeader from './LittleLemonHeader';
-import Profile from './Profile';
 import { useNavigation } from "@react-navigation/native";
 
 import {
   View,
   Text,
   ScrollView,
-  FlatList,
-  TextInput,
   StyleSheet,
   Image,
   Pressable,
@@ -64,21 +60,21 @@ export default function Home() {
             </Text> */}
       <View style={styles.buttonsContainer}
       >
-        <Button
-          type="solid"
-          title="Starters"
-          onPress={() => Alert.alert('Filter on Starters')}
-        />
-        <Button
-          type="solid"
-          title="Entrees"
-          onPress={() => Alert.alert('Filter on Entrees')}
-        />
-        <Button
-          type="solid"
-          title="Salads"
-          onPress={() => Alert.alert('Filter on Salads')}
-        />
+      <Pressable
+        onPress={() => Alert.alert('Filter on Starters')}
+        style={styles.filterButton}>
+        <Text>Starters</Text>
+      </Pressable>
+      <Pressable
+        onPress={() => Alert.alert('Filter on Entrees')}
+        style={styles.filterButton}>
+        <Text>Entrees</Text>
+      </Pressable>
+      <Pressable
+        onPress={() => Alert.alert('Filter on Salads')}
+        style={styles.filterButton}>
+        <Text>Salads</Text>
+      </Pressable>
       </View>
       <Separator />
       <View style={styles.section}>
@@ -154,9 +150,6 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // margin: 5,
-    //width: 300,
-    // backgroundColor: 'grey',
   },
   mainContainer: {
     flex: 1,
@@ -188,25 +181,12 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 20,
   },
-  // logOutButton: {
-  //   //fontSize: 11,
-  //   padding: 10,
-  //   marginHorizontal: 10,
-  //   marginVertical: 3,
-  //   backgroundColor: '#F4CE14',
-  //   borderColor: '#F4CE14',
-  //   borderWidth: 2,
-  //   borderRadius: 20,
-  //   width: 300,
-  // },
   buttonsContainer: {
     flexDirection: 'row',
     margin: 10,
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'center',
-    // width: '100%',
-    // marginVertical: 20,
   },
   buttonText: {
     color: 'black',
@@ -216,32 +196,22 @@ const styles = StyleSheet.create({
   image: {
     height: 250,
     width: 250,
-    // borderRadius: 2,
   },
   menuImage: {
     height: 75,
     width: 75,
-    // margin: 10,
   },
-  // checkbox: {
-  //   alignSelf: 'left',
-  //   margin: 8,
-  // },
   sectionButton: {
     flexDirection: 'row',
-    // alignItems: 'center',
-    // padding: 10,
   },
   section: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginRight: 20,
     marginTop: 20,
-    //alignItems: 'right',
   },
   infoSection: {
     margin: 15,
-    // marginRight: 100,
     fontSize: 18,
     padding: 5,
     color: 'black',
@@ -266,5 +236,11 @@ const styles = StyleSheet.create({
     borderBottomColor: '#737373',
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
-
+  filterButton: {
+    fontSize: 22,
+    padding: 10,
+    backgroundColor: '#C0C0C0',
+    borderColor: '#C0C0C0',
+    borderRadius: 10,
+  },
 });

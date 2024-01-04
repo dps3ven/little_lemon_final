@@ -23,7 +23,6 @@ export default function Profile() {
     const [isspecialofferChecked, setspecialofferChecked] = useState(false);
     const [isnewsletterChecked, setnewsletterChecked] = useState(false);
 
-
     const clearData = () => {
         onChangefirstname()
         onChangelastname()
@@ -158,11 +157,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         margin: 20,
-        //width: 300,
-        // backgroundColor: 'grey',
     },
     input: {
-        //     height: 40, 
         margin: 2,
         borderWidth: 1,
         padding: 5,
@@ -172,7 +168,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     button: {
-        //fontSize: 11,
         padding: 10,
         marginHorizontal: 20,
         backgroundColor: '#F4CE14',
@@ -181,7 +176,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
     },
     logOutButton: {
-        //fontSize: 11,
         padding: 10,
         marginHorizontal: 10,
         marginVertical: 3,

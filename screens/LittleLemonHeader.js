@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Button, Alert } from 'react-native';
-import Profile from './Profile';
 import { useNavigation } from "@react-navigation/native";
 
 export default function LittleLemonHeader() {
