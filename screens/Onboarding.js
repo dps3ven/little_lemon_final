@@ -9,7 +9,6 @@ export default function Onboarding() {
   const navigation = useNavigation();
   const [email, onChangeEmail] = useState('');
   const [firstname, onChangefirstname] = useState('');
-  const [lastname, onChangelastname] = useState('');
   const [isDisabled, onChangeDisabled] = useState(true)
 
   const onHomeButtonPressed = () => {
@@ -21,7 +20,6 @@ export default function Onboarding() {
   const storeData = async () => {
     try {
       await AsyncStorage.setItem('firstName', JSON.stringify(firstname));
-      await AsyncStorage.setItem('lastName', JSON.stringify(lastname));
       await AsyncStorage.setItem('emailAddress', JSON.stringify(email));
       onHomeButtonPressed()
     } catch (error) {
@@ -46,13 +44,6 @@ export default function Onboarding() {
         value={firstname}
         placeholder={'first name'}
         onChangeText={onChangefirstname}
-      >
-      </TextInput>
-      <TextInput
-        style={styles.input}
-        value={lastname}
-        placeholder={'last name'}
-        onChangeText={onChangelastname}
       >
       </TextInput>
       <TextInput

@@ -16,7 +16,6 @@ import {
 export default function Profile() {
     const [email, onChangeEmail] = React.useState('');
     const [firstname, onChangefirstname] = React.useState('');
-    const [lastname, onChangelastname] = React.useState('');
     const [phonenumber, onChangephonenumber] = React.useState('555-1212');
     const [isstatusChecked, setstatusChecked] = useState(false);
     const [ispasswordChecked, setpasswordChecked] = useState(false);
@@ -25,7 +24,6 @@ export default function Profile() {
 
     const clearData = () => {
         onChangefirstname()
-        onChangelastname()
         onChangeEmail()
         onChangephonenumber()
         setnewsletterChecked()
@@ -39,12 +37,9 @@ export default function Profile() {
             try {
                 const firstname = await AsyncStorage.getItem('firstName');
                 onChangefirstname(firstname)
-                const lastname = await AsyncStorage.getItem('lastName');
-                onChangelastname(lastname)
                 const email = await AsyncStorage.getItem('emailAddress');
                 onChangeEmail(email)
                 console.log(firstname)
-                console.log(lastname)
                 console.log(email)
             } catch (err) {
                 console.log(err);
@@ -77,16 +72,6 @@ export default function Profile() {
                 value={firstname}
                 placeholder={'first name'}
                 onChangeText={onChangefirstname}
-            >
-            </TextInput>
-            <Text style={styles.infoSection}>
-                Last Name
-            </Text>
-            <TextInput
-                style={styles.input}
-                value={lastname}
-                placeholder={'last name'}
-                onChangeText={onChangelastname}
             >
             </TextInput>
             <Text style={styles.infoSection}>

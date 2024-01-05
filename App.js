@@ -24,7 +24,6 @@ function App() {
         const removeData = async () => {
             try {
                 await AsyncStorage.removeItem('firstName');
-                await AsyncStorage.removeItem('lastName');
                 await AsyncStorage.removeItem('emailAddress');
             } catch (error) {
                 console.log(error);
@@ -33,7 +32,6 @@ function App() {
         const firstLoad = async () => {
             try {
                 const firstName = await AsyncStorage.getItem('firstName');
-                const lastName = await AsyncStorage.getItem('lastName');
                 const emailAddress = await AsyncStorage.getItem('emailAddress');
                 if (emailAddress != " " && emailAddress != null) {
                     setIsOnboardingCompleted(true)
